@@ -1,0 +1,20 @@
+{
+  "name": "cards-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "next",
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "author": "retrofox <rdsuarez@gmail.com> (https://damian.blog/)",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "next": "^9.1.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
