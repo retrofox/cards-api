@@ -10,7 +10,7 @@
     "build": "next build"
   },
   "author": "retrofox <rdsuarez@gmail.com> (https://damian.blog/)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.15",
     "next": "^9.1.1",

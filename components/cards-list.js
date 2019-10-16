@@ -71,7 +71,7 @@ const mapCardToObject = ( id, attrs = {} ) => {
   return { id, code, image, url }
 };
 
-const getCardsListObject = () => map( cards, mapCardToObject );
+const getCardsListObject = ( attrs ) => map( cards, card => mapCardToObject ( card, attrs ) );
 
 const getCardByCardId = ( id ) => {
   if ( ! id ) {
@@ -85,7 +85,7 @@ const getCardByCardId = ( id ) => {
   return mapCardToObject( id );
 };
 
-export default () => map( cards, c => c.toLowerCase() );
+export default () => ( cards );
 export {
   getCardsListObject,
   getCardByCardId,
