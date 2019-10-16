@@ -6,13 +6,6 @@ const cardsList = getCardsList();
 export default async (req, res ) => {
   const { query } = req;
 
-  if ( ! query.card ) {
-    return res.status( 404 ).json( {
-      'message': 'No card ID',
-      code: 404,
-    } );
-  }
-
   const cardId = query.card
     ? String( query.card ).toLowerCase()
     : false;
@@ -34,5 +27,7 @@ export default async (req, res ) => {
     } );
   }
 
-  res.status( 200 ).json( getCardByCardId( cardId ) );
+  res.status( 200 ).json( getCardByCardId( cardId, {
+    fileExt: query.fileExt || null,
+  } ) );
 };

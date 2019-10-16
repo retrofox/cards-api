@@ -3,6 +3,7 @@ import { map } from 'lodash';
 
 export default async ( req, res ) => {
   res.status( 200 ).json( getCardsListObject( {
-    host: req.headers.host
+    host: req.headers.host,
+    fileExt: req.query.fileExt || null,
   } ) );
 };

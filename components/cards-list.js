@@ -65,15 +65,21 @@ const mapCardToObject = ( id, attrs = {} ) => {
     protocol = 'http',
 
   } = attrs;
-  const image = `/image/${ code }.${ fileExt }`;
-  const url = `${ protocol }://${ host }/images/${ code }.${ fileExt }`;
+
+  const fileExtensions = [ 'png', 'svg' ];
+  const ext = fileExtensions.indexOf( fileExt ) < 0
+    ? 'png'
+    : fileExt;
+
+  const image = `/image/${ code }.${ ext }`;
+  const url = `${ protocol }://${ host }/images/${ code }.${ ext }`;
 
   return { id, code, image, url }
 };
 
 const getCardsListObject = ( attrs ) => map( cards, card => mapCardToObject ( card, attrs ) );
 
-const getCardByCardId = ( id ) => {
+const getCardByCardId = ( id, attrs ) => {
   if ( ! id ) {
     [];
   }
@@ -82,7 +88,7 @@ const getCardByCardId = ( id ) => {
     [];
   }
 
-  return mapCardToObject( id );
+  return mapCardToObject( id, attrs );
 };
 
 export default () => ( cards );
