@@ -71,7 +71,7 @@ const mapCardToObject = ( id, attrs = {} ) => {
     ? 'png'
     : fileExt;
 
-  const image = `/image/${ code }.${ ext }`;
+  const image = `/images/${ code }.${ ext }`;
   const url = `${ protocol }://${ host }/images/${ code }.${ ext }`;
 
   return { id, code, image, url }
