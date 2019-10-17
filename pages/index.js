@@ -2,30 +2,24 @@ import fetch from 'isomorphic-unfetch';
 import { map } from 'lodash';
 
 const Card = ( { card } ) => <div className="card">
-  <style jsx>{`
-    {
-      color: red;
-    }
-
-    .card {
-      width: 108px;
-      height: 150px;
-      margin: 10px;
-      float: left;
-    }
-
-    .card-image {
-      background-image: url( ${ card.image } );
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      width: 100%;
-      height: 100%;
-    }
-
-  `}</style>
-  <div className='card-image'>
-  </div>
+	<style jsx>{`
+		.card {
+			  width: 108px;
+			  height: 150px;
+			  margin: 10px;
+			  float: left;
+		}
+	
+		.card-image {
+			background-image: url( ${ card.image } );
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			width: 100%;
+			height: 100%;
+		}
+	`}</style>
+	<div className='card-image' />
 </div>;
 
 const Home = ( { cards } ) => <div className="cards-deck">
